@@ -40,7 +40,7 @@ plugins=(
     thxph-fzf \
     thanh)
 if uname | grep Darwin >> /dev/null; then
-    plugins+=(osx)
+    plugins+=(macos)
 elif uname | grep Linux >> /dev/null; then
     plugins+=(copydir copybuffer)
 fi
@@ -60,3 +60,4 @@ source $ZSH/oh-my-zsh.sh
 #export NVM_DIR="$HOME/.config/nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH=/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/texbin:/usr/local/opt/python/libexec/bin:/Users/nghiatruong/Library/Python/2.7/bin:/Users/nghiatruong/go/bin:/Users/nghiatruong/wip/bin:/Users/nghiatruong/bin:.:/Users/nghiatruong/.fzf/bin

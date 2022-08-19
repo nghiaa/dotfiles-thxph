@@ -149,9 +149,9 @@ stepInstallStuff () {
         pamac install sqlite3 neovim tmux
         nvim +PlugInstall +qa
     elif uname -a | grep -iq darwin > /dev/null; then
-        if [ -f /usr/local/bin/brew ]; then
+        if [ -f /opt/homebrew/bin/brew ]; then
             brew install python curl neovim wget python3 tmux zsh git reattach-to-user-namespace highlight tree
-            pip3 install git+git://github.com/powerline/powerline
+            pip3 install git+ssh://git@github.com/powerline/powerline
             pip3 install psutil
             pip3 install neovim
             if grep -iq '/usr/local/bin/zsh' /etc/shells; then
