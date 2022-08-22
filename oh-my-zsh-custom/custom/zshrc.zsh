@@ -168,3 +168,6 @@ if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
     zle -N zle-line-init
     zle -N zle-line-finish
 fi
+
+# enable powerlevel10k theme, run `p10k configure` or edit ~/.p10k.zsh to customize prompt.
+[[ -f "$HOME/.p10k.zsh" ]] && source $HOME/.p10k.zsh

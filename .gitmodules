@@ -13,3 +13,6 @@
 [submodule "oh-my-zsh-custom/custom/plugins/zsh-histdb-fzf"]
 	path = oh-my-zsh-custom/custom/plugins/zsh-histdb-fzf
 	url = git@github.com:thxph/zsh-histdb-fzf.git
+[submodule "oh-my-zsh-custom/themes/powerlevel10k"]
+	path = oh-my-zsh-custom/themes/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
