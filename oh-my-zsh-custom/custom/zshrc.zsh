@@ -85,32 +85,17 @@ bindkey '^h' backward-delete-char
 bindkey '^w' backward-kill-word
 export KEYTIMEOUT=1
 
-
-# loading aliases
-#alias sudo='sudo '
-alias ln='nocorrect ln'
-alias lsa='ls -alkiGF'
-alias rm='rm -r'
-alias cp='cp -vr'
+# aliases
+if [[ -f "$HOME/.zshrc.alias" ]]; then
+    while read -r line || [[ -n "$line" ]]; do
+        alias "$line"
+    done < "$HOME/.zshrc.alias"
+fi
 
 if which nvim > /dev/null; then
   alias vim="nvim"
   alias vi="nvim"
 fi
-
-# Aliases for tar command
-  # create/extract/list/append tar
-  alias ctar='tar -pcvf'
-  alias xtar='tar -pxvf'
-  alias ltar='tar -tvf'
-  # create/extract/list/append tar.gz
-  alias cztar='tar -pcvzf'
-  alias xztar='tar -pxvzf'
-  alias lztar='tar -tvzf'
-  # create/extract/list/append tar.bz2
-  alias cjtar='tar -pcvjf'
-  alias xjtar='tar -pxvjf'
-  alias ljtar='tar -tvjf'
 
 # cleaning vim's backup
 find $HOME/.vimbackup -name "*" -type f -mtime +90 -exec rm -f {} \;

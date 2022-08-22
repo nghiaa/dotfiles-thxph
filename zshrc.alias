@@ -1,0 +1,37 @@
+add=git add
+amend=git commit --amend
+branch=git branch
+checkout=git checkout
+clone=git clone
+commit=git commit
+commita=git add . && git commit
+config=git config
+docker=podman
+diff=git diff
+fetch=git fetch
+merge=git merge
+pull=git pull -r
+push=git push
+rebase=git rebase
+remote=git remote
+reset=git reset
+restore=git restore
+stash=git stash
+status=git status
+
+cp=cp -vr
+rm=rm -rfv
+ln=nocorrect ln
+lsa=ls -alkiGF
+
+ctar=tar -pcvf
+xtar=tar -pxvf
+ltar=tar -tvf
+
+cztar=tar -pcvzf
+xztar=tar -pxvzf
+lztar=tar -tvzf
+
+cjtar=tar -pcvjf
+xjtar=tar -pxvjf
+ljtar=tar -tvjf

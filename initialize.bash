@@ -154,13 +154,13 @@ stepInstallStuff () {
             pip3 install git+ssh://git@github.com/powerline/powerline
             pip3 install psutil
             pip3 install neovim
-            if grep -iq '/usr/local/bin/zsh' /etc/shells; then
-                printf "    \033[1;34;49m /usr/local/bin/zsh is already in /etc/shells\033[0m\n"
+            if grep -iq '/opt/homebrew/bin/zsh' /etc/shells; then
+                printf "    \033[1;34;49m /opt/homebrew/bin/zsh is already in /etc/shells\033[0m\n"
             else
                 printf "    \033[1;34;49m Adding homebrew's zsh to /etc/shells\n\033[0m"
-                sudo sh -c 'echo "/usr/local/bin/zsh" >> /etc/shells'
+                sudo sh -c 'echo "/opt/homebrew/bin/zsh" >> /etc/shells'
             fi
-            find /usr/local -iregex '.*tmux/powerline.conf' 2> /dev/null -print0 | xargs -0 -I % ln -sfv % $HOME/.powerline-tmux.conf
+            find /opt/homebrew -iregex '.*tmux/powerline.conf' 2> /dev/null -print0 | xargs -0 -I % ln -sfv % $HOME/.powerline-tmux.conf
         fi
     fi
 }
