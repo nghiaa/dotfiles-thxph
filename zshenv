@@ -71,3 +71,5 @@ export VISUAL=`which nvim`
 if [ -f "$HOME/.cargo/env" ]; then
     . "$HOME/.cargo/env"
 fi
+
+export TMUX_PLUGINS="$HOME/.tmux/plugins"
