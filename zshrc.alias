@@ -6,7 +6,6 @@ clone=git clone
 commit=git commit
 commita=git add . && git commit
 config=git config
-docker=podman
 diff=git diff
 fetch=git fetch
 merge=git merge
