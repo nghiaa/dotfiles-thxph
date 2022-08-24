@@ -5,7 +5,7 @@ set runtimepath+=~/.fzf
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'joshdick/onedark.vim'
+Plug 'joshdick/onedark.vim' { 'branch': 'main' }
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdcommenter'
