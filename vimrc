@@ -5,8 +5,8 @@ set runtimepath+=~/.fzf
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'joshdick/onedark.vim' { 'branch': 'main' }
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdcommenter'
 "Plug 'airblade/vim-gitgutter'
@@ -137,7 +137,7 @@ syntax on
 set background=dark
 "let g:rehash256 = 1
 "let g:molokai_original = 1
-colorscheme onedark
+colorscheme Tomorrow-Night
 let g:airline_theme='onedark'
 
 set mouse=a                     " Enable mouse
