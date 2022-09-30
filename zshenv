@@ -73,7 +73,6 @@ if [ -f "$HOME/.cargo/env" ]; then
 fi
 
 export TMUX_PLUGINS="$HOME/.tmux/plugins"
-export DOCKER_HOST="tcp://192.168.1.49:2375"
 
 MYSQL_CLI=/opt/homebrew/Cellar/mysql-client/8.0.30/bin/
 DOCKER=/opt/homebrew/Cellar/docker/20.10.17/bin/
