@@ -1,0 +1,30 @@
+# Default configuration file for tmux-powerline.
+# Modeline {
+#	 vi: foldmarker={,} foldmethod=marker foldlevel=0 tabstop=4 filetype=sh
+# }
+
+# General {
+	# Show which segment fails and its exit code.
+	export TMUX_POWERLINE_DEBUG_MODE_ENABLED="false"
+
+	# Use patched font symbols.
+	export TMUX_POWERLINE_PATCHED_FONT_IN_USE="true"
+
+	# The theme to use. You can change it to your theme here
+	export TMUX_POWERLINE_THEME="nghiaa"
+
+	# Overlay directory to look for themes. There you can put your own themes outside the repo. Fallback will still be the "themes" directory in the repo.
+	export TMUX_POWERLINE_DIR_USER_THEMES=""
+
+	# Overlay directory to look for segments. There you can put your own segments outside the repo. Fallback will still be the "segments" directory in the repo.
+	export TMUX_POWERLINE_DIR_USER_SEGMENTS=""
+# }
+
+# date.sh {
+	export TMUX_POWERLINE_SEG_DATE_FORMAT="%d/%m/%Y"
+# }
+
+# hostname.sh {
+	# Use short or long format for the hostname. Can be {"short, long"}.
+	export TMUX_POWERLINE_SEG_HOSTNAME_FORMAT="short"
+# }

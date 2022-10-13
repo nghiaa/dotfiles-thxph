@@ -3,6 +3,7 @@ set -e
 
 here="$(dirname "$0")"
 here="$(cd "$here"; pwd)"
+plugin_dir="$HOME/.tmux/plugins"
 
 (cd $here; git submodule init)
 (cd $here; git submodule update)
@@ -10,7 +11,7 @@ here="$(cd "$here"; pwd)"
 mkln () {
     for file in "$here"/"$1"*; do
         name="$(basename "$file")"
-        if [[ !( " bin config initialize.bash oh-my-zsh-custom readme.md " =~ " $name " ) ]]; then
+        if [[ !( " bin config initialize.bash oh-my-zsh-custom tpm readme.md " =~ " $name " ) ]]; then
             if [[ $2 == 't' ]]; then
                 if [[ -e "$HOME/.$1$name" ]]; then
                     rm -rv "$HOME/.$1$name"
@@ -160,7 +161,13 @@ stepInstallStuff () {
                 printf "    \033[1;34;49m Adding homebrew's zsh to /etc/shells\n\033[0m"
                 sudo sh -c 'echo "/opt/homebrew/bin/zsh" >> /etc/shells'
             fi
+            
             find /opt/homebrew -iregex '.*tmux/powerline.conf' 2> /dev/null -print0 | xargs -0 -I % ln -sfv % $HOME/.powerline-tmux.conf
+            if ps -e | grep tmux > /dev/null; then tmux source ~/.tmux.conf; fi
+            mkdir -p "$plugin_dir"
+            rm -rfv "$plugin_dir/*"
+            ln -sfv "$here/tpm" "$plugin_dir/tpm"
+            $plugin_dir/tpm/scripts/install_plugins.sh
         fi
     fi
 }
