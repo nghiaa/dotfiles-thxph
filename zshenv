@@ -1,5 +1,9 @@
 #!/usr/bin/env zsh
 
+DOCKER_VER="20.10.22"
+OPENVPN_VER="2.6.5"
+MYSQL_VER="8.0.33"
+
 #zmodload zsh/zprof
 
 if [[ -d /usr/local/go/bin ]]; then
@@ -74,9 +78,10 @@ fi
 
 export TMUX_PLUGINS="$HOME/.tmux/plugins"
 
-export DOCKER_HOST="tcp://192.168.1.96:2375"
+export DOCKER_HOST="tcp://192.168.1.27:2375"
 
-DOCKER=/opt/homebrew/Cellar/docker/20.10.22/bin/
-OPENVPN=/opt/homebrew/Cellar/openvpn/2.5.8/sbin/
-BREW=/opt/homebrew/bin/
-export PATH="$DOCKER:$OPENVPN:$BREW:$PATH"
+DOCKER="/opt/homebrew/Cellar/docker/$DOCKER_VER/bin/"
+OPENVPN="/opt/homebrew/Cellar/openvpn/$OPENVPN_VER/sbin/"
+MYSQL="/opt/homebrew/Cellar/mysql/$MYSQL_VER/bin/"
+BREW="/opt/homebrew/bin/"
+export PATH="$DOCKER:$OPENVPN:$BREW:$MYSQL_CLIENT:$PATH"
