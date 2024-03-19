@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 DOCKER_VER="20.10.22"
-OPENVPN_VER="2.6.5"
+OPENVPN_VER="2.6.6"
 MYSQL_VER="8.0.33"
 
 #zmodload zsh/zprof
@@ -83,5 +83,6 @@ export DOCKER_HOST="tcp://192.168.1.27:2375"
 DOCKER="/opt/homebrew/Cellar/docker/$DOCKER_VER/bin/"
 OPENVPN="/opt/homebrew/Cellar/openvpn/$OPENVPN_VER/sbin/"
 MYSQL="/opt/homebrew/Cellar/mysql/$MYSQL_VER/bin/"
+FLUTTER="$HOME/development/flutter/bin"
 BREW="/opt/homebrew/bin/"
-export PATH="$DOCKER:$OPENVPN:$BREW:$MYSQL_CLIENT:$PATH"
+export PATH="$FLUTTER:$DOCKER:$OPENVPN:$BREW:$MYSQL_CLIENT:$PATH"
