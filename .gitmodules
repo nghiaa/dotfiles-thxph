@@ -16,9 +16,3 @@
 [submodule "oh-my-zsh-custom/themes/powerlevel10k"]
 	path = oh-my-zsh-custom/themes/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
-[submodule "tpm"]
-	path = tpm
-	url = https://github.com/tmux-plugins/tpm
-[submodule "tmux-powerline"]
-	path = tmux-powerline
-	url = https://github.com/nghiaa/tmux-powerline

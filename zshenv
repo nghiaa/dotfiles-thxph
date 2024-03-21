@@ -76,8 +76,6 @@ if [ -f "$HOME/.cargo/env" ]; then
     . "$HOME/.cargo/env"
 fi
 
-export TMUX_PLUGINS="$HOME/.tmux/plugins"
-
 export DOCKER_HOST="tcp://192.168.1.27:2375"
 
 DOCKER="/opt/homebrew/Cellar/docker/$DOCKER_VER/bin/"

@@ -3,7 +3,6 @@ set -e
 
 here="$(dirname "$0")"
 here="$(cd "$here"; pwd)"
-plugin_dir="$HOME/.tmux/plugins"
 
 (cd $here; git submodule init)
 (cd $here; git submodule update)
@@ -160,14 +159,7 @@ stepInstallStuff () {
             else
                 printf "    \033[1;34;49m Adding homebrew's zsh to /etc/shells\n\033[0m"
                 sudo sh -c 'echo "/opt/homebrew/bin/zsh" >> /etc/shells'
-            fi
-            
-            find /opt/homebrew -iregex '.*tmux/powerline.conf' 2> /dev/null -print0 | xargs -0 -I % ln -sfv % $HOME/.powerline-tmux.conf
-            if ps -e | grep tmux > /dev/null; then tmux source ~/.tmux.conf; fi
-            mkdir -p "$plugin_dir"
-            rm -rfv "$plugin_dir/*"
-            ln -sfv "$here/tpm" "$plugin_dir/tpm"
-            $plugin_dir/tpm/scripts/install_plugins.sh
+            fi        
         fi
     fi
 }
