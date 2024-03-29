@@ -105,52 +105,10 @@ if [[ ! -d "$HOME/.fonts" ]]; then
 fi
 
 stepInstallStuff () {
-    if uname -a | grep -iq linux > /dev/null && grep -iq debian /etc/*release* > /dev/null; then
-        echo 'Installing stuff ...'
-        sudo apt update
-        sudo apt -y install aptitude python3 git zsh curl wget python3-venv python3-pip
-        sudo apt -y install debhelper autotools-dev dh-autoreconf file libncurses5-dev libevent-dev pkg-config libutempter-dev build-essential
-        sudo apt -y install sqlite3
-        printf "\033[1;32;49m=== Type Y/y to install powerline: \033[0m"
-        read -n 1 c; echo ''; if [[ $c == 'Y' ]] || [[ $c == 'y' ]]; then
-            echo 'Installing powerline'
-            pip3 install --user wheel
-            pip3 install --user powerline-status
-            ln -sfv ${HOME}/.local/lib/python$(python3 --version | sed 's/.*\(3\..\).*/\1/')/site-packages/powerline/bindings/tmux/powerline.conf $HOME/.powerline-tmux.conf
-            printf "\033[1;32;49m=== Type Y/y to install powerline patched fonts: \033[0m"
-            read -n 1 c; echo ''; if [[ $c == 'Y' ]] || [[ $c == 'y' ]]; then
-                sudo apt install -y fontconfig
-                if which fc-cache; then
-                    echo 'Installing powerline-patched-font'
-                    git clone https://github.com/Lokaltog/powerline-fonts $HOME/powerline-font-82374846
-                    find $HOME/powerline-font-82374846 -regextype posix-extended -iregex '.*\.(otf|ttf)' -print0 | xargs -0 -I % mv -v % $HOME/.fonts/
-                    rm -rfv $HOME/powerline-font-82374846
-                    fc-cache -vf $HOME/.fonts/
-                fi
-            fi
-        fi
-        printf "\033[1;32;49m=== Type Y/y to change default shell to zsh: \033[0m"
-        read -n 1 c; echo ''; if [[ $c == 'Y' ]] || [[ $c == 'y' ]]; then
-        chsh -s `which zsh`
-        fi
-        printf "\033[1;32;49m=== Type Y/y to install neovim: \033[0m"
-        read -n 1 c; echo ''; if [[ $c == 'Y' ]] || [[ $c == 'y' ]]; then
-            sudo apt update
-            sudo apt -y install neovim
-            sudo apt -y install python3-dev python3-pip
-            sudo apt -y install highlight tree
-            pip3 install --user neovim
-            nvim +PlugInstall +qa
-        fi
-    elif uname -a | grep -iq linux > /dev/null && grep -iq manjaro /etc/*release* > /dev/null; then
-        echo 'Installing stuff...'
-        #pamac checkupdates || true
-        #pamac update --no-confirm
-        pamac install sqlite3 neovim tmux
-        nvim +PlugInstall +qa
-    elif uname -a | grep -iq darwin > /dev/null; then
+    if uname -a | grep -iq darwin > /dev/null; then
+        xcode-select --install
         if [ -f /opt/homebrew/bin/brew ]; then
-            brew install pyenv curl neovim wget tmux zsh git reattach-to-user-namespace highlight tree
+            brew install openssl readline sqlite3 xz zlib tcl-tk pyenv curl neovim wget tmux zsh git reattach-to-user-namespace highlight tree
             pip3 install git+ssh://git@github.com/powerline/powerline
             pip3 install psutil
             pip3 install neovim
