@@ -80,7 +80,14 @@ export DOCKER_HOST="tcp://192.168.1.27:2375"
 
 DOCKER="/opt/homebrew/Cellar/docker/$DOCKER_VER/bin/"
 OPENVPN="/opt/homebrew/Cellar/openvpn/$OPENVPN_VER/sbin/"
-MYSQL="/opt/homebrew/Cellar/mysql/$MYSQL_VER/bin/"
+
+# MYSQL stuffs
+export MYSQL_CLIENT="/opt/homebrew/opt/mysql-client/bin"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/mysql-client/lib/pkgconfig"
+export MYSQL_HOME="/opt/homebrew/opt/mysql-client/include"
+export MYSQLCLIENT_CFLAGS="-I/opt/homebrew/opt/mysql-client/include"
+export MYSQLCLIENT_LDFLAGS="-L/opt/homebrew/opt/mysql-client/lib/ -lmysqlclient"
+
 FLUTTER="$HOME/development/flutter/bin"
 BREW="/opt/homebrew/bin/"
 export PATH="$FLUTTER:$DOCKER:$OPENVPN:$BREW:$MYSQL_CLIENT:$PATH"
