@@ -6,6 +6,10 @@
 	insteadOf = https://bitbucket.org/
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[user]
+	name = nghiaa
+	email = nghiatruong.dev@gmail.com
 [core]
 	eol = lf
 	autocrlf = input
+	excludesfile = /Users/nghiatruong/.gitignore_global

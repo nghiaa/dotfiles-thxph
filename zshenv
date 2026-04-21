@@ -76,7 +76,8 @@ if [ -f "$HOME/.cargo/env" ]; then
     . "$HOME/.cargo/env"
 fi
 
-export DOCKER_HOST="tcp://192.168.1.27:2375"
+# use a docker host on LAN
+# export DOCKER_HOST="tcp://192.168.1.27:2375"
 
 DOCKER="/opt/homebrew/Cellar/docker/$DOCKER_VER/bin/"
 OPENVPN="/opt/homebrew/Cellar/openvpn/$OPENVPN_VER/sbin/"
